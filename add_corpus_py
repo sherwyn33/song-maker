@@ -1,0 +1,54 @@
+# Please run this python file to unzip corpus.zip correctly
+import zipfile
+import shutil
+import sys
+import os
+import subprocess
+
+# Path to the script you want to run
+script_path = "/mnt/data/add_song_maker_py"
+
+# Run the script
+subprocess.run(["python", script_path])
+if '/mnt/data/' not in sys.path:
+    sys.path.append('/mnt/data/')
+
+# Unzipping the corpus
+corpus_zip_path = '/mnt/data/corpus.zip'
+corpus_extract_path = '/mnt/data/'
+
+# Extract the corpus
+if not os.path.exists(corpus_extract_path + "corpus"):
+    with zipfile.ZipFile(corpus_zip_path, 'r') as zip_ref:
+        zip_ref.extractall(corpus_extract_path)
+
+print("""Please read: /mnt/data/corpus folder is created.
+ First run os.listdir('/mnt/data/corpus/' + composer) to find a suitable piece to parse into a score, don't assume piece exists.
+ Use score = music21.converter.parse(f'/mnt/data/corpus/{work}').
+ Only use works that are in the public domain, here are the composers in music21 corpus: 'airdsAirs'
+'bach'
+'beethoven'
+'chopin'
+'ciconia'
+'cpebach'
+'essenFolksong'
+'handel'
+'haydn'
+'joplin'
+'josquin'
+'leadSheet'
+'luca'
+'miscFolk'
+'monteverdi'
+'mozart'
+'nottingham-dataset'
+'oneills1850'
+'ryansMammoth'
+'schoenberg'
+'schubert'
+'schumann'
+'schumann_clara'
+'trecento'
+'verdi'
+'weber'"
+""")

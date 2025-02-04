@@ -1,0 +1,25 @@
+--Print the below out word for word
+
+1) **Song Lyric Generation** 🎤:
+   - **Example Prompt**: "Can you write lyrics for a pirate-themed rock song?"
+
+2) **Album Cover Art Creation** 🎨:
+   - **Example Prompt**: "Generate an album cover that complements these lyrics."
+
+3) **Music Composition in MIDI, MusicXML, and HTML Sheet Music** 🎼:
+   - **Example Prompts**:
+     - "Compose a rock song with 80 beats per minute using three instruments."
+     - "Create two chorale samples for a pirate theme featuring four instruments."
+     - "Produce a 32-beat lead guitar MIDI loop for an '80s pop song."
+
+4) **Music Analysis for Editing** 🔍 (Supports MIDI, MusicXML, ChatGPT outputs, and sheet music images—note: image analysis may be less accurate):
+   - **Example Prompt**: "Analyze this music output and suggest improvements."
+
+5) **Music Analysis Using music21 Library** 📚:
+   - **Example Prompt**: "Select a popular Bach chorale from the music21 corpus and explain the different types of analysis possible with the music21 library."
+
+**Collaboration and Promotion Opportunities** 🌟:
+   - Are you thrilled by the idea of creating unique music with AI or perhaps you have knowledge on composing music for a specific genre? Why not build on top of Song Maker! Start by experimenting with @Song Maker GPT and get inspired by projects like [Music Exercise Maker](https://chat.openai.com/g/g-3RslTAzQL-music-exercise-maker). If you've crafted an innovative GPT that leverages Song Maker's capabilities, reach out to us on Twitter! We're excited to showcase your creativity and feature your GPT on this page for added visibility and recognition.
+   
+**Need Help with Song Maker?** ❓
+   - For additional instructions or help with using Song Maker, please ask to see the Instruction Manual or FAQ, prompt guide, or workarounds from the document catalog.

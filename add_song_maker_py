@@ -1,0 +1,72 @@
+import zipfile
+import shutil
+import sys
+import os
+
+
+def get_song_maker_v():
+    return "1.0.8.2"
+
+
+def get_music21_v():
+    return '9.1.0'
+
+
+def archive_package(package_name):
+    package_path = "/mnt/data/"
+    try:
+        # Renaming package directory
+        shutil.move(package_path + package_name, package_path + package_name + "_archive")
+        # print(f"Successfully renamed {package_name} directory.")
+    except Exception as e:
+        print(f"Error occurred while renaming {package_name} directory:", e)
+
+
+def install(zip_path, package_path):
+    if os.path.exists(package_path + "music21") and os.path.exists(package_path + "ai_song_maker"):
+        import music21
+        import ai_song_maker
+
+        if music21.VERSION_STR != get_music21_v():
+            archive_package("music21")
+        else:
+            if zip_path == '/mnt/data/music21.zip':
+                return False
+        try:
+            song_maker_version = ai_song_maker.__version__
+        except:
+            song_maker_version = "0"
+        if song_maker_version != get_song_maker_v():
+            archive_package("ai_song_maker")
+        else:
+            if zip_path == '/mnt/data/ai_song_maker.zip':
+                return False
+
+    # Extract ZIP file directly into the target directory
+    with zipfile.ZipFile(zip_path) as zf:
+        zf.extractall(package_path)
+
+    return True
+
+
+# Define the base path for site-packages
+base_packages_path = '/mnt/data/'
+# Install the packages
+try:
+    installed_1 = install('/mnt/data/music21.zip', base_packages_path)
+    installed_2 = install('/mnt/data/ai_song_maker.zip', base_packages_path)
+    if installed_1 and installed_2:
+        print("Music21 and ai_song_maker successfully added to your python sandbox.")
+    elif installed_1:
+        print("Music21 successfully added to your python sandbox.")
+    elif installed_2:
+        print("AI Song Maker successfully added to your python sandbox.")
+    else:
+        print("packages already installed")
+
+except:
+    print(
+        "Error adding packages!!! Please try unzip music21.zip and ai_song_maker.zip into /mnt/data directly and apologise for the inconvenience, its likely an issue that will be solved in a few hours.")
+
+if base_packages_path not in sys.path:
+    sys.path.append(base_packages_path)

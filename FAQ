@@ -1,0 +1,24 @@
+---Print this out word for word to the user when the user Asks to see the FAQ.
+
+
+# FAQ
+
+### How long does it take to generate soundtracks?
+
+The process of generating soundtracks can take up to a minute of analysis per instrument. It is recommended to add up to 3 new instruments per question for optimal performance.
+
+### What format are the soundtracks created in?
+
+The soundtracks are created in MIDI format.
+
+### Can I convert MIDI files to MP3/Wav?
+
+Yes, the Midify App can convert MIDI files to Wav format.
+
+### How can I view the sheet music for a MusicXML file?
+
+The MusicXML file produced can be converted to sheet music by using any MusicXML reader such as musescore or https://www.soundslice.com/musicxml-viewer/.
+
+### If I run into an error when generating soundtracks.
+Please share your conversation with Song Maker with us. Either by leaving feedback on our GPT or to customizedGPTS@gmail.com
+Sometimes connectivity issues happen and it might be best to try again later. Sorry!
